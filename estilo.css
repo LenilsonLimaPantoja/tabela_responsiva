@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.container{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    transition: 1s;
+}
+.tabela{
+    width: 100%;
+    border: solid 1px gray;
+    padding: 10px;
+    border-radius: 5px;
+    border-collapse:collapse;
+
+    transition: 1s;
+    transform: translateX(-100%);
+    animation-fill-mode: forwards;
+    animation-name: tabela;
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+td, th{
+    border: solid 1px gray;
+    text-align: center;
+    padding: 5px;
+    
+    transition: 1s;
+}
+button{
+    padding: 5px 10px;
+    border: none;
+    background-color: orange;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.excluir{
+    background-color: brown;
+    color: white;
+}
+@media (max-width: 1024px){
+    .container{
+        width: 90%;
+    }
+}
+@media (max-width: 700px){
+    .container{
+        width: 100%;
+    }
+}
+@media (max-width: 568px){
+    .tabela{
+        border: none;
+    }
+    th{
+        display: none;
+    }
+    .linha{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: solid 1px gray;
+    }
+    td{
+        border: none;
+    }
+}
+@keyframes tabela{
+    100%{
+        transform: translateX(0);
+    }
+}
